@@ -1,7 +1,7 @@
 cc_library_static {
     name: "libinit_a5lte_eur",
     recovery_available: true,
-    srcs: ["init_a5lte.cpp"],
+    srcs: ["init_a5lte_eur.cpp"],
     cpp_std: "c++17",
     include_dirs: [
         "system/core/base/include",
