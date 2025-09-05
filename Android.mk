@@ -13,14 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := $(call my-dir)
+ifneq ($(filter $(TARGET_DEVICE), a5lte a5ltezt),)
 
-ifeq ($(TARGET_DEVICE),a5lte)
+LOCAL_PATH := $(call my-dir)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
-
-include device/samsung/a5lte/firmware_makerules.mk
+include $(LOCAL_PATH)/firmware_makerules.mk
 
 endif
