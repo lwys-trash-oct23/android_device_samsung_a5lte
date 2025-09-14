@@ -13,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := $(call my-dir)
-
 ifneq ($(filter $(TARGET_DEVICE), a5lte a5ltezt),)
+
+LOCAL_PATH := device/samsung/a5lte
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
