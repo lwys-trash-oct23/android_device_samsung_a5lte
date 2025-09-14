@@ -15,11 +15,11 @@
 
 ifneq ($(filter $(TARGET_DEVICE), a5lte a5ltezt),)
 
-LOCAL_PATH := device/samsung/a5lte
-
-include $(call all-makefiles-under,$(LOCAL_PATH))
+LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 include $(LOCAL_PATH)/firmware_makerules.mk
+
+include $(call all-makefiles-under,$(LOCAL_PATH))
 
 endif
