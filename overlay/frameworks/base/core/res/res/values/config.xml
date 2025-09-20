@@ -94,6 +94,7 @@
     <bool name="config_automatic_brightness_available">true</bool>
 
     <!--  Whether Multiuser UI should be shown -->
+    <!-- FIXME: Disable? This isn't very useful with only 16GB internal storage -->
     <bool name="config_enableMultiUserUI">true</bool>
 
     <bool name="config_allowAllRotations">true</bool>

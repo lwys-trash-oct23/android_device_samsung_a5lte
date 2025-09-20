@@ -13,11 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit some common TWRP stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
-
 # Inherit device configuration for a5lte
 $(call inherit-product, device/samsung/a5lte/full_a5lte.mk)
+
+# Inherit some common TWRP stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 PRODUCT_NAME := twrp_a5lte
 BOARD_VENDOR := samsung

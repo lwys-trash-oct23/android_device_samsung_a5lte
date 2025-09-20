@@ -15,17 +15,19 @@
 # limitations under the License.
 #
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS := \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
+
 # Must define platform variant before including any common things
-# FIXME: can be removed?
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
 # Inherit from common
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS := \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+# Call the proprietary setup
+$(call inherit-product, vendor/samsung/a5lte/a5lte-vendor.mk)
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -422,9 +424,6 @@ PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 # Always preopt extracted APKs to prevent extracting out of the APK
 # for gms modules.
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
-
-# Call the proprietary setup
-$(call inherit-product, vendor/samsung/a5lte/a5lte-vendor.mk)
 
 # Inherit custom props
 $(call inherit-product, device/samsung/a5lte/system_prop.mk)

@@ -13,14 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
 # Inherit device configuration for a5lte
 $(call inherit-product, device/samsung/a5lte/full_a5lte.mk)
 
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
 PRODUCT_NAME := lineage_a5lte
-BOARD_VENDOR := samsung
 PRODUCT_DEVICE := a5lte
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
@@ -29,19 +28,17 @@ TARGET_VENDOR_PRODUCT_NAME := a5lte
 TARGET_VENDOR_DEVICE_NAME := a5ltexx
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=a5lte PRODUCT_NAME=a5ltexx
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := a5ulte,a5ultexx,a5lte,a5ltexx,a53gxx,a53g,a5ltedd,a5ultektt,a5ultelgt,a5lteub,a5ultekx,a5ulteskt,a5ultebmc,a5ultedv
-
 # Fingerprint
 BUILD_FINGERPRINT := samsung/a5ltexx/a5lte:6.0.1/MMB29M/A500FXXU1CPH2:user/release-keys
 BUILD_DESCRIPTION := a5ltexx-user 6.0.1 MMB29M A500FXXU1CPH2 release-keys
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=a5ltexx \
-    TARGET_DEVICE="a5ltexx"
+    TARGET_DEVICE="a5ltexx" \
+    PRIVATE_BUILD_DESC="$(BUILD_DESCRIPTION)"
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="$(BUILD_DESCRIPTION)"
+# Assert
+TARGET_OTA_ASSERT_DEVICE := a5ulte,a5ultexx,a5lte,a5ltexx,a53gxx,a53g,a5ltedd,a5ultektt,a5ultelgt,a5lteub,a5ultekx,a5ulteskt,a5ultebmc,a5ultedv
